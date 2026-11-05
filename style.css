@@ -1,0 +1,30 @@
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#F3EFE4}
+.hero{position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden;background:#F3EFE4;isolation:isolate;touch-action:none;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#1d1a10;-webkit-user-select:none;user-select:none}
+#bg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.portrait{position:absolute;bottom:0;left:50%;transform:translateX(-50%);aspect-ratio:1024/1536;width:min(64vh,92vw)}
+.portrait img,.portrait canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.portrait img{object-fit:fill;pointer-events:none}
+#ghost{opacity:.022;-webkit-mask-image:radial-gradient(ellipse 30% 24% at 50% 31%,#000 35%,transparent 100%);
+  mask-image:radial-gradient(ellipse 30% 24% at 50% 31%,#000 35%,transparent 100%)}
+.pad{--fs:clamp(60px,10.5vw,160px);--t:calc(env(safe-area-inset-top,0px) + clamp(18px,3vw,40px));--s:clamp(18px,3vw,44px)}
+.mark{position:absolute;top:var(--t);left:var(--s);margin:0;mix-blend-mode:difference;color:#F6F6F2;pointer-events:none;
+  font-family:"HelveticaNeue-CondensedBlack","HelveticaNeue-CondensedBold","AvenirNextCondensed-Heavy","Arial Narrow",Impact,sans-serif;
+  font-weight:900;font-size:var(--fs);line-height:.8;letter-spacing:-.015em;text-transform:uppercase}
+.mark span{display:block}
+.cap{position:absolute;left:var(--s);top:calc(var(--t) + var(--fs)*1.7);margin:0;font-size:13px;letter-spacing:.01em;max-width:22ch;line-height:1.35;color:#4a4332}
+.cta{position:absolute;top:var(--t);right:var(--s);padding:12px 22px;border-radius:999px;background:#B4E600;color:#14120a;
+  font-weight:600;font-size:14px;text-decoration:none;transition:transform .2s}
+.cta:hover{transform:scale(1.05)}
+.cta:focus-visible{outline:2px solid #14120a;outline-offset:3px}
+.card{position:absolute;left:var(--s);bottom:calc(env(safe-area-inset-bottom,0px) + clamp(18px,3vw,40px));max-width:230px;padding:14px 16px;
+  border-radius:14px;background:rgba(243,239,228,.86);font-size:13px;line-height:1.4;pointer-events:none}
+.card b{display:flex;align-items:center;gap:8px;font-weight:600;margin-bottom:4px}
+.card i{width:8px;height:8px;border-radius:50%;background:#B4E600;display:block}
+.card p{margin:0;color:#4a4332}
+@media (max-width:768px){
+  .portrait{width:min(58vh,118vw)}
+  .pad{--fs:clamp(56px,19vw,110px)}
+  .cta{padding:10px 18px;font-size:13px}
+}
